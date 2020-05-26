@@ -1,0 +1,27 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Departments";
+}
+
+<h2>Departments</h2>
+
+<table class=" table table-striped">
+    <tr>
+
+        <th>Department</th>
+
+    </tr>
+    @foreach (var department in Model)
+    {
+        <tr>
+
+            <td>@department</td>
+
+        </tr>
+
+    }
+</table>
+
+<br />
+<a asp-controller="Employee" asp-action="Index">Atpakaļ</a>
+<br />

@@ -1,0 +1,35 @@
+﻿@model List<EmployeeModel>
+@{
+    ViewData["Title"] = "Employees";
+}
+
+<h2>All employees</h2>
+@if(Model.Count > 0)
+{
+<table class=" table table-striped">
+    <tr>
+
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Department</th>
+        <th></th>
+    </tr>
+    @foreach (var employee in Model)
+    {
+        <tr>
+
+            <td>@employee.Name</td>
+            <td>@employee.Surname</td>
+            <td>@employee.Department</td>
+            <td><a asp-controller="Employee" asp-action="View" asp-route-id="@employee.Id">View employee data</a></td>
+        </tr>
+
+    }
+</table>
+}
+else
+{
+<div>There are no employees in the list</div>
+}
+
+
